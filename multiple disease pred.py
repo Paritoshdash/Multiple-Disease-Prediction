@@ -151,4 +151,93 @@ if (selected == 'Heart Disease Prediction'):
             heart_dignosis = 'The person does not have any heart disease'
     
     st.success(heart_dignosis)
+
+# Parkinsons Prediction Page 
+if (selected == 'Parkinsons Prediction'):
+    
+    #page site
+    st.title('Parkinsons Prediction using ML')
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        fo = st.text_input('MDVP:Fo(Hz)')
+
+    with col2:
+        fhi = st.text_input('MDVP:Fhi(Hz)')
+
+    with col3:
+        flo = st.text_input('MDVP:Flo(Hz)')
+
+    with col1:
+        Jitter_percent = st.text_input('MDVP:Jitter(%)')
+
+    with col2:
+        Jitter_Abs = st.text_input('MDVP:Jitter(Abs)')
+
+    with col3:
+        RAP = st.text_input('MDVP:RAP')
+
+    with col1:
+        PPQ = st.text_input('MDVP:PPQ')
+
+    with col2:
+        DDP = st.text_input('Jitter:DDP')
+
+    with col3:
+        Shimmer = st.text_input('MDVP:Shimmer')
+
+    with col1:
+        Shimmer_dB = st.text_input('MDVP:Shimmer(dB)')
+
+    with col2:
+        APQ3 = st.text_input('Shimmer:APQ3')
+
+    with col3:
+        APQ5 = st.text_input('Shimmer:APQ5')
+
+    with col1:
+        APQ = st.text_input('MDVP:APQ')
+
+    with col2:
+        DDA = st.text_input('Shimmer:DDA')
+
+    with col3:
+        NHR = st.text_input('NHR')
+
+    with col1:
+        HNR = st.text_input('HNR')
+
+    with col2:
+        RPDE = st.text_input('RPDE')
+
+    with col3:
+        DFA = st.text_input('DFA')
+
+    with col1:
+        spread1 = st.text_input('spread1')
+
+    with col2:
+        spread2 = st.text_input('spread2')
+
+    with col3:
+        D2 = st.text_input('D2')
+
+    with col1:
+        PPE = st.text_input('PPE')
+
+    #code for prediction
+    Parkinsons_dignosis = ''
+    
+    #creating a button for prediction
+    
+    if st.button('Heart Test Result'):
+        Parkinsons_prediction = heart_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+        
+        if (Parkinsons_prediction[0]==1):
+            Parkinsons_dignosis = 'The person is having heart disease'
+        else:
+            Parkinsons_dignosis = 'The person does not have any heart disease'
+    
+    st.success(Parkinsons_dignosis)
     
