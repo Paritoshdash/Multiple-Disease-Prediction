@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Multiple Disease Prediction</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #003049; /* Dark Blue */
+            color: #fdf0d5; /* Cream */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        /* Main Container */
+        .container {
+            background: linear-gradient(145deg, #669bbc, #003049); /* Blue Gradient */
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Brand Header */
+        .brand {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdf0d5; /* Cream */
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #fdf0d5; /* Cream */
+            font-weight: 600;
+        }
+
+        /* Input Fields */
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: #fdf0d5; /* Cream */
+            color: #003049; /* Dark Blue */
+            font-size: 16px;
+            outline: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            box-shadow: 0 0 12px #669bbc; /* Blue Glow */
+        }
+
+        input::placeholder {
+            color: #003049; /* Dark Blue */
+            opacity: 0.8;
+        }
+
+        /* Button Styling */
+        button {
+            background-color: #c1121f; /* Red */
+            color: #fdf0d5; /* Cream */
+            padding: 14px 0;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #003049; /* Dark Blue */
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #fdf0d5;
+        }
+
+        .footer a {
+            color: #669bbc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px;
+            }
+        }
+
+    </style>
+    <script>
+        function handleSignup(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (can be enhanced)
+            if (username === "" || email === "" || password === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // Simulate sign-up success and redirect to login page
+            alert(`Welcome, ${username}! You have successfully signed up.`);
+            window.location.href = 'index.html'; // Redirect to Login Page
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="brand">Multiple Disease Prediction</div>
+        <h2>Create an Account</h2>
+
+        <!-- Sign-Up Form -->
+        <form onsubmit="handleSignup(event)">
+            <input type="text" id="username" placeholder="Enter your Username" required>
+            <input type="email" id="email" placeholder="Enter your Email" required>
+            <input type="password" id="password" placeholder="Create a Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Footer -->
+        <div class="footer">
+            Already have an account? <a href="index.html">Login here</a>
+        </div>
+    </div>
+</body>
+
+</html>

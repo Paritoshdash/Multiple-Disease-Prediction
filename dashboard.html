@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Disease Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #003049;
+            color: #fdf0d5;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #669bbc;
+        }
+
+        button {
+            background-color: #c1121f;
+            color: #fdf0d5;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        button:hover {
+            background-color: #669bbc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Explore disease prediction using machine learning.</p>
+        <button onclick="goToPrediction()">Go to Prediction System</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function goToPrediction() {
+            window.location.href = "https://multiple-disease-prediction-w64kxnxsp9zunl2kprbski.streamlit.app/";
+        }
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>
