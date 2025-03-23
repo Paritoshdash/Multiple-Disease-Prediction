@@ -4,99 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Multiple Disease Prediction</title>
-    <style>
-        body {
-            background-color: #003049;
-            color: #fdf0d5;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background: linear-gradient(145deg, #669bbc, #003049);
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-            text-align: center;
-            width: 100%;
-            max-width: 480px;
-        }
-
-        .brand {
-            font-size: 2em;
-            font-weight: bold;
-            color: #fdf0d5;
-            margin-bottom: 30px;
-        }
-
-        input {
-            width: 100%;
-            padding: 14px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 8px;
-            background-color: #fdf0d5;
-            color: #003049;
-        }
-
-        button {
-            background-color: #c1121f;
-            color: white;
-            padding: 14px 0;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        button:hover {
-            background-color: #003049;
-        }
-
-        .footer {
-            margin-top: 20px;
-        }
-
-        .footer a {
-            color: #669bbc;
-            text-decoration: none;
-        }
-    </style>
-    <script>
-        function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username && password) {
-                window.location.href = 'dashboard.html';
-            } else {
-                alert("Please enter valid credentials");
-            }
-        }
-    </script>
+    <title>Login - Health Prediction</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="brand">Multiple Disease Prediction</div>
-        <h2>Login</h2>
-        <form onsubmit="handleLogin(event)">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit" href="https://multiple-disease-prediction-w64kxnxsp9zunl2kprbski.streamlit.app/">Login</button>
-        </form>
-        <div class="footer">
-            Don't have an account? <a href="signup.html">Sign Up</a> | <a href="about.html">About</a>
+        <div class="left-section">
+            <img src="images/health_image.jpg" alt="Health Illustration">
+        </div>
+
+        <div class="right-section">
+            <h2>Welcome Back!</h2>
+            <p>Log in to access the Multiple Disease Prediction system.</p>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </form>
         </div>
     </div>
-</body>
 
-</html>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = 'https://multiple-disease-prediction-w64kxnxsp9zunl2kprbski.streamlit.app/';
+        }
+    </scri
