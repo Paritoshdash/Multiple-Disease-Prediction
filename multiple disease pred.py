@@ -132,19 +132,16 @@ if selected == 'Heart Disease Prediction':
     # code for Prediction
     heart_diagnosis = ''
 
-    # creating a button for Prediction
-
-    if st.button('Heart Disease Test Result'):
-
-        user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
-
-        user_input = [float(x) for x in user_input]
-
-        heart_prediction = heart_disease_model.predict([user_input])
-
-        if heart_prediction[0] == 1:
-            heart_diagnosis = 'The person is having heart disease'
+    #creating a button for prediction
+    
+    if st.button('Heart Disease Result'):
+        heart_prediction = heart_disease_model.predict([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+        
+        if (heart_prediction[0]==1):
+            heart_diagnosis = 'The Person Is Diabetic'
         else:
-            heart_diagnosis = 'The person does not have any heart disease'
-
+            heart_diagnosis = 'The Person Is Not Diabetic'
+    
     st.success(heart_diagnosis)
+
+
